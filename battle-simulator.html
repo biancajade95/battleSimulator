@@ -12,39 +12,71 @@
 </head>
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <h1>Battle Simulator</h1>
-        </div>
-        
+    <div class="container-fluid m-4">
         <div class="row">
             <div class="col">
-                < HOME > < ABOUT >
+                <div class="row">
+                    <h1>Battle Simulator</h1>
+                </div>
+                <div class="row">
+                        < HOME > < ABOUT > < CONTACT US >
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h2>Player Character</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="playerCharacter" class="form-label">Player Character</label>
-                        <input type="text" class="form-control" id="playerCharacter" />
+            <div class="col-5 m-2">
+                <form id="userForm">
+                    <h2>Player Character</h2>
+
+                        <div class="mb-3">
+                            <label for="playerCharacter" class="form-label">Player Character</label>
+                            <input type="text" class="form-control" id="playerCharacter" name="playerCharacter" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="maxHitPoint" class="form-label">Maximum Hit Points</label>
+                            <input type="number" class="form-control" id="maxHitPoint" name="maxHitPoint" min="1" max="300" required/> 
+                        </div>
+
+                        <div class="mb-3">
+                            <p>Faces on Dice:</p>
+                            <input type="radio" id="d4" name="diceFace" value="4">
+                            <label for="d4">D4 : Four Faces</label><br />
+                            <input type="radio" id="d6" name="diceFace" value="6" checked>
+                            <label for="d6">D6 : Six Faces</label><br />
+                            <input type="radio" id="d8" name="diceFace" value="8">
+                            <label for="d8">D8 : Eight Faces</label><br />
+                            <input type="radio" id="d10" name="diceFace" value="10">
+                            <label for="d10">D10 : Ten Faces</label><br />
+                            <input type="radio" id="d12" name="diceFace" value="12">
+                            <label for="d12">D12 : Twelve Faces</label><br />
+                            <input type="radio" id="d20" name="diceFace" value="20">
+                            <label for="d20">D20 : Twenty Faces</label><br />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="diceQty" class="form-label">How many dice per attack?</label>
+                            <input type="number" class="form-control" id="diceQty" name="diceQty" min="1" max="20" required/> 
+                        </div>
+
+                        <input type="submit" value="Roll for Initiative!" />
+                        
+
                     </div>
-                    <div class="mb-3">
-                        <label for="maxHitPoint" class="form-label">Maximum Hit Points</label>
-                        <input type="number" class="form-control" id="maxHitPoint" min="0" max="300" /> 
+                    <div class="col-5 m-2">
+                        <h2>Monsters</h2>
+                        <div class="mb-3">
+                            <label for="monsterName" class="form-label">Monster to Fight</label>
+                            <input type="text" class="form-control" id="monsterName" name="monsterName" required/>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div class="col-6">
-                <h2>Monsters</h2>
-            </div>
+             </form>
         </div>
     </div>
 
     <script src="battle-simulator.js"></script>
 </body>
-</html>
+</html> 
